@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zukhruf.dev</title>
+    <meta name="description" content="Zukhruf builds fast, clear websites for small businesses. Placed by hand. Built to last.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="logo.jpg">
+    <meta name="color-scheme" content="light">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+<nav class="nav-bar">
+    <div class="logo">
+        <img class="logo-img" src="./logo.jpg" alt="Logo">
+        <span>Zukhruf</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <label for="menu-toggle" class="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+</nav>
+
+<label for="menu-toggle" class="overlay"></label>
+
+<aside class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Contact Us</a>
+</aside>
+
+<!-- hero-section -->
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>Placed by hand.
+        <br>Built to last.</h1>
+        <p>I design and build fast,<br> clear websites for people and <br>businesses who want to be taken seriously online.</p>
+
+        <div class="buttons">
+            <a href="#contact"><button>Start Project</button></a>
+            <a href="#portfolio"><button id="touch-btn">View Portfolio</button></a>
+        </div>
+    </div>
+    <div class="hero-img">
+        <img class="image" src="./picture11.jpg" alt="A developer working at a desk with several screens">
+    </div>
+</section>
+
+<div class="ornament" aria-hidden="true"><span></span></div>
+
+<!-- about-section -->
+<section class="about" id="about">
+  <img src="picture12.jpg" alt="Zukhruf, web developer">
+  <div class="about-text">
+    <div>
+      <p>Zukhruf (زخرف) means ornament: the fine detail that turns something plain into something worth looking at.</p>
+      <p>I build websites the same way, with clear layouts, honest words and careful finishing, so your site looks good and is easy to use.</p>
+    </div>
+    <p>Made for you, not copied from a template.</p>
+    <p>Clear layouts. Honest words. Careful finishing.</p>
+    <span>&lt;/&gt;</span>
+  </div>
+</section>
+
+<!-- services-section -->
+<section class="services" id="services">
+
+  <p>Here is what I can build for you.</p>
+
+  <div>
+    <article>
+      <h3>Landing Pages</h3>
+      <p>One focused page that explains what you offer and makes the next step obvious.</p>
+    </article>
+
+    <article>
+      <h3>Business Websites</h3>
+      <p>A full site with the pages your customers look for, working well on phones.</p>
+    </article>
+
+    <article>
+      <h3>Redesigns</h3>
+      <p>Keep what works, fix what confuses people, and make the site faster to load.</p>
+    </article>
+  </div>
+</section>
+
+<!-- portfolio-section -->
+<section class="portfolio" id="portfolio">
+  <div>
+    <h2>Every business deserves a place of its own online</h2>
+    <p>From a small shop that only had a phone number, to a page with its own name, its own story and a button that says "message us". That is what I want to make possible.</p>
+    <p>Many small businesses have the vision but not the right path online. I build that path one clear website at a time. This is just the beginning.</p>
+    <p>My finished projects will be added here as my work grows.</p>
+  </div>
+</section>
+
+<!-- contact us section -->
+<section class="contact" id="contact">
+  <h1>Need a website? Send a short message about what you need. I will reply with questions and a price.</h1>
+
+  <form id="contactForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Fatima Ahmed" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="something@example.com" required>
+
+    <label for="need">What do you need?</label>
+    <select id="need" name="need" required>
+      <option value="" selected disabled>Select an option</option>
+      <option>Landing Page</option>
+      <option>Business Website</option>
+      <option>Redesign of current website</option>
+      <option>Something else</option>
+    </select>
+
+    <label for="message">Message (optional)</label>
+    <textarea id="message" name="message"></textarea>
+
+    <button type="submit">Send message</button>
+    <p id="status"></p>
+  </form>
+
+</section>
+
+<!-- footer -->
+<footer class="site-footer">
+  <div class="footer-brand">
+    <img src="./logo.jpg" alt="Zukhruf logo">
+    <span>Zukhruf</span>
+  </div>
+
+  <p class="footer-tagline">Small details. Clear websites.</p>
+
+  <div class="footer-social">
+    <a href="https://instagram.com/zukhruf.dev" target="_blank" rel="noopener" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="mailto:zukhrufdev@gmail.com" aria-label="Email">
+      <i class="fa-regular fa-envelope"></i>
+    </a>
+    <a href="https://github.com/zukhrufdev-bot" target="_blank" rel="noopener" aria-label="GitHub">
+  <i class="fa-brands fa-github"></i>
+    </a>
+  </div>
+
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <p class="footer-copy">© 2026 Zukhruf. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+emailjs.init("A1_KscUzBqpIeKpGn");
+
+const form = document.getElementById('contactForm');
+const status = document.getElementById('status');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  status.textContent = "Sending...";
+
+  emailjs.sendForm('service_p03mz6a', 'template_qtfs8ja', this)
+    .then(() => {
+      status.textContent = "Message sent successfully!";
+      status.style.color = "green";
+      form.reset();
+    })
+    .catch((err) => {
+      status.textContent = "Failed to send. Please try again.";
+      status.style.color = "red";
+      console.error(err);
+    });
+});
+</script>
+
+</body>
+</html>
