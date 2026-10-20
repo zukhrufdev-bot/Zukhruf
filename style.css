@@ -5,7 +5,7 @@
   scroll-behavior: smooth;
 }
 :root {
-  color-scheme: light dark;
+  color-scheme: light ;
 }
 .logo{
     display: flex;
@@ -1060,70 +1060,8 @@ input, select, textarea {
   opacity: 1;
   pointer-events: auto;
 }
-/* ===== DARK MODE: apne rang ===== */
-@media (prefers-color-scheme: dark) {
-
-  body,
-  .ornament,
-  .about,
-  .services,
-  .portfolio,
-  .contact,
-  .faq,
-  .about-hero {
-    background: #1f2d16;
-  }
-
-  .nav-bar,
-  .site-footer,
-  .mobile-nav {
-    background: #16210f !important;
-  }
-
-  .hero-text h1,
-  .hero-text p,
-  .services > p,
-  .contact h1,
-  .page-title,
-  .about-hero h1 {
-    color: #f0e8d8;
-  }
-
-  /* hamburger menu saaf nazar aaye */
-  .nav-bar .hamburger span {
-    background: #f0e8d8 !important;
-  }
-
-  /* hero ke buttons */
-  .buttons button {
-    background-color: #e0a591 !important;
-    color: #1c1c1c !important;
-  }
-  #touch-btn {
-    background-color: #f0e8d8 !important;
-    color: #1c1c1c !important;
-    border: 1px solid #f0e8d8;
-  }
-
-  /* cream cards: andar ka text gehra */
-  .services article,
-  .about-text > div,
-  .contact form,
-  .faq details,
-  .portfolio p,
-  .portfolio h2 {
-    color: #2a2a26;
-  }
-
-  /* form ke fields */
-  input, select, textarea {
-    background: #fff;
-    color: #1c1c1c;
-  }
-
   /* back to top button */
   .to-top {
     background: #e0a591 !important;
     color: #1c1c1c !important;
   }
-}
