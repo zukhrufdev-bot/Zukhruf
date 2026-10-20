@@ -1119,3 +1119,52 @@ input, select, textarea {
     flex-direction: column;
   }
 }
+/* ===== Automatic Dark Mode Support ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark !important;
+  }
+
+  /* Main background for Dark Mode */
+  body {
+    background: #1e2912 !important; /* Deep dark olive green */
+    color: #f0e8d8 !important;
+  }
+
+  /* Navigation Bar & Footer */
+  .nav-bar, 
+  .site-footer {
+    background: #141c0c !important;
+  }
+
+  /* Cards, About section boxes & FAQ */
+  .services article,
+  .contact form,
+  .about-text > div,
+  .faq details,
+  .portfolio > div::before {
+    background: #283618 !important;
+    color: #f0e8d8 !important;
+  }
+
+  /* Form input fields */
+  .contact input,
+  .contact select,
+  .contact textarea {
+    background: #192211 !important;
+    color: #f0e8d8 !important;
+    border-color: #f0e8d8 !important;
+  }
+
+  /* All Headings and Text Visibility Fix */
+  h1, h2, h3, p, label, .faq summary {
+    color: #f0e8d8 !important;
+  }
+
+  /* Secondary Cream/Pink Cards */
+  .services article:nth-child(2),
+  .about-text > p:nth-of-type(1) {
+    background: #3e4e27 !important;
+    color: #f0e8d8 !important;
+  }
+}
