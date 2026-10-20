@@ -732,7 +732,7 @@ html {
   .logo span {
     font-size: 26px;
   }
-
+}
   /* sidebar */
   .mobile-nav {
     display: flex;
@@ -798,6 +798,7 @@ html {
   }
 
   /* menu khula ho to peeche page scroll na ho */
+@supports selector(:has(*)) {
   body:has(.menu-toggle:checked) {
     overflow: hidden;
   }
@@ -984,10 +985,11 @@ html {
 .about-hero .about-text {
   transform: none;
 }
+/* Change clip to hidden here */
 .about, .about-hero, .services, .portfolio, .faq {
-  overflow-x: clip;
-}
+  overflow-x: hidden;
 
+}
 /* ===== Upar jaane ka button ===== */
 .to-top {
   position: fixed;
@@ -1065,3 +1067,28 @@ input, select, textarea {
     background: #e0a591 !important;
     color: #1c1c1c !important;
   }
+  @media (max-width: 800px) {
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    max-width: 80%;
+    height: 100vh;
+    padding: 110px 24px 24px;
+    background: #44561f;
+    font-family: 'Poppins', sans-serif;
+    overflow-y: auto;
+    z-index: 999;
+    transform: translateX(100%);
+    visibility: hidden; /* Added */
+    transition: transform 0.3s ease, visibility 0.3s ease;
+  }
+
+  .menu-toggle:checked ~ .mobile-nav {
+    transform: translateX(0);
+    visibility: visible; /* Added */
+  }
+}
