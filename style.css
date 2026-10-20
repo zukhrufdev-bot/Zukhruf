@@ -1,3 +1,12 @@
+:root {
+  color-scheme: only light;
+  forced-color-adjust: none;
+}
+
+html, body {
+  background-color: #556b2f;
+  color: #f0e8d8;
+}
 * {
   margin: 0;
   padding: 0;
@@ -1030,4 +1039,21 @@ html {
 }
 input, select, textarea {
   color: #1c1c1c;
+}
+.nav-bar .hamburger span {
+  background-color: #f0e8d8 !important;
+}
+
+.buttons button {
+  background-color: #b38072 !important;
+  color: #000 !important;
+}
+
+#touch-btn {
+  background-color: #f0e8d8 !important;
+  color: #000 !important;
+}
+
+.nav-bar {
+  background-color: #44561f !important;
 }
