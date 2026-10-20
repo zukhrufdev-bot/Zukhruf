@@ -1119,20 +1119,85 @@ input, select, textarea {
     flex-direction: column;
   }
 }
-/* ===== Lock Original Olive Green Theme Everywhere ===== */
-:root {
-  color-scheme: light only !important;
+/* ===== Samsung Internet & Mobile Force Dark Mode Fix ===== */
+
+/* 1. Browser ke auto-dark filter ko strictly block karna */
+:root, html, body {
+  color-scheme: light !important;
+  supported-color-schemes: light !important;
 }
 
-html, body {
-  color-scheme: light only !important;
-  background-color: #556b2f !important;
-}
-
-/* Force dark mode browsers to keep the original color */
+/* 2. Jab phone mein dark mode active ho, tab visibility aur contrast enforce karna */
 @media (prefers-color-scheme: dark) {
-  html, body {
+  
+  /* Main Background ko original olive green par lock karna */
+  body, .about, .services, .portfolio, .contact, .faq {
     background-color: #556b2f !important;
-    color: inherit !important;
+    color: #f0e8d8 !important;
+  }
+
+  /* Navigation Bar & Header Fix */
+  .nav-bar {
+    background-color: #44561f !important;
+  }
+
+  /* Hamburger Menu Icon Fix (Teeno lines ko bright cream banana) */
+  .nav-bar .hamburger span {
+    background-color: #f0e8d8 !important;
+  }
+
+  /* Hero Section & Main Headings (Jo aankhon mein dhasi hui lag rahi thin) */
+  .hero-text h1, 
+  .about-hero h1, 
+  .page-title,
+  .logo span {
+    color: #ffffff !important; /* Pure white for maximum visibility */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* Soft shadow taaki clear dikhe */
+  }
+
+  /* Paragraph Text & Descriptions */
+  .hero-text p, 
+  .services > p, 
+  .contact h1,
+  .about-text p {
+    color: #f0e8d8 !important;
+  }
+
+  /* Cards (Services, About, FAQ) - Contrast badhane ke liye */
+  .services article,
+  .about-text > div,
+  .faq details,
+  .contact form {
+    background-color: #f0e8d8 !important;
+    color: #2a2a26 !important;
+  }
+
+  /* Cards ke andar ka text bilkul dark & readable */
+  .services article h3,
+  .services article p,
+  .contact label,
+  .faq summary,
+  .faq details p {
+    color: #1c1c1c !important;
+  }
+
+  /* Contact Form Inputs */
+  .contact input,
+  .contact select,
+  .contact textarea {
+    background-color: #ffffff !important;
+    color: #1c1c1c !important;
+    border: 1px solid #2a2a26 !important;
+  }
+
+  /* Buttons Visibility */
+  .buttons button {
+    background-color: #b38072 !important;
+    color: #000000 !important;
+  }
+
+  #touch-btn {
+    background-color: #f0e8d8 !important;
+    color: #000000 !important;
   }
 }
