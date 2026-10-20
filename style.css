@@ -5,7 +5,7 @@
   scroll-behavior: smooth;
 }
 :root {
-  color-scheme: light only ;
+  color-scheme: light;
 }
 .logo{
     display: flex;
@@ -54,7 +54,7 @@ background-color: transparent;
 .hero-text h1 {
   font-size: 3.5rem;
   line-height: 1.15;
-  color:#f0e8d8;
+  color: #000;
 }
 .hero-text p {
   font-size: 1.25rem;
@@ -732,7 +732,7 @@ html {
   .logo span {
     font-size: 26px;
   }
-}
+
   /* sidebar */
   .mobile-nav {
     display: flex;
@@ -798,7 +798,6 @@ html {
   }
 
   /* menu khula ho to peeche page scroll na ho */
-@supports selector(:has(*)) {
   body:has(.menu-toggle:checked) {
     overflow: hidden;
   }
@@ -985,11 +984,10 @@ html {
 .about-hero .about-text {
   transform: none;
 }
-/* Change clip to hidden here */
 .about, .about-hero, .services, .portfolio, .faq {
-  overflow-x: hidden;
-
+  overflow-x: clip;
 }
+
 /* ===== Upar jaane ka button ===== */
 .to-top {
   position: fixed;
@@ -1029,175 +1027,4 @@ html {
 .mobile-nav a[aria-current="page"] {
   color: #e0a591;
   font-weight: 600;
-}
-input, select, textarea {
-  color: #1c1c1c;
-}
-.nav-bar .hamburger span {
-  background-color: #f0e8d8 !important;
-}
-
-.buttons button {
-  background-color: #b38072 !important;
-  color: #000 !important;
-}
-
-#touch-btn {
-  background-color: #f0e8d8 !important;
-  color: #000 !important;
-}
-
-.nav-bar {
-  background-color: #44561f !important;
-}
-
-.to-top {
-  opacity: 0;
-  pointer-events: none;
-  font-weight: bold;
-  font-size: 1.5rem;
-  line-height: 1;
-}
-.to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-  /* back to top button */
-  .to-top {
-    background: #e0a591 !important;
-    color: #1c1c1c !important;
-  }
-  @media (max-width: 800px) {
-  .mobile-nav {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 280px;
-    max-width: 80%;
-    height: 100vh;
-    padding: 110px 24px 24px;
-    background: #44561f;
-    font-family: 'Poppins', sans-serif;
-    overflow-y: auto;
-    z-index: 999;
-    transform: translateX(100%);
-    visibility: hidden; /* Added */
-    transition: transform 0.3s ease, visibility 0.3s ease;
-  }
-
-  .menu-toggle:checked ~ .mobile-nav {
-    transform: translateX(0);
-    visibility: visible; /* Added */
-  }
-}
-
-/* ===== Samsung Internet Fixes ===== */
-:root {
-  color-scheme: light only !important;
-}
-
-@media (max-width: 800px) {
-  .mobile-nav {
-    display: none !important;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 280px;
-    max-width: 80%;
-    height: 100vh;
-    padding: 110px 24px 24px;
-    background: #44561f;
-    font-family: 'Poppins', sans-serif;
-    overflow-y: auto;
-    z-index: 999;
-  }
-
-  .menu-toggle:checked ~ .mobile-nav {
-    display: flex !important;
-    flex-direction: column;
-  }
-}
-/* ===== Samsung Internet & Mobile Force Dark Mode Fix ===== */
-
-/* 1. Browser ke auto-dark filter ko strictly block karna */
-:root, html, body {
-  color-scheme: light !important;
-  supported-color-schemes: light !important;
-}
-
-/* 2. Jab phone mein dark mode active ho, tab visibility aur contrast enforce karna */
-@media (prefers-color-scheme: dark) {
-  
-  /* Main Background ko original olive green par lock karna */
-  body, .about, .services, .portfolio, .contact, .faq {
-    background-color: #556b2f !important;
-    color: #f0e8d8 !important;
-  }
-
-  /* Navigation Bar & Header Fix */
-  .nav-bar {
-    background-color: #44561f !important;
-  }
-
-  /* Hamburger Menu Icon Fix (Teeno lines ko bright cream banana) */
-  .nav-bar .hamburger span {
-    background-color: #f0e8d8 !important;
-  }
-
-  /* Hero Section & Main Headings (Jo aankhon mein dhasi hui lag rahi thin) */
-  .hero-text h1, 
-  .about-hero h1, 
-  .page-title,
-  .logo span {
-    color: #ffffff !important; /* Pure white for maximum visibility */
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* Soft shadow taaki clear dikhe */
-  }
-
-  /* Paragraph Text & Descriptions */
-  .hero-text p, 
-  .services > p, 
-  .contact h1,
-  .about-text p {
-    color: #f0e8d8 !important;
-  }
-
-  /* Cards (Services, About, FAQ) - Contrast badhane ke liye */
-  .services article,
-  .about-text > div,
-  .faq details,
-  .contact form {
-    background-color: #f0e8d8 !important;
-    color: #2a2a26 !important;
-  }
-
-  /* Cards ke andar ka text bilkul dark & readable */
-  .services article h3,
-  .services article p,
-  .contact label,
-  .faq summary,
-  .faq details p {
-    color: #1c1c1c !important;
-  }
-
-  /* Contact Form Inputs */
-  .contact input,
-  .contact select,
-  .contact textarea {
-    background-color: #ffffff !important;
-    color: #1c1c1c !important;
-    border: 1px solid #2a2a26 !important;
-  }
-
-  /* Buttons Visibility */
-  .buttons button {
-    background-color: #b38072 !important;
-    color: #000000 !important;
-  }
-
-  #touch-btn {
-    background-color: #f0e8d8 !important;
-    color: #000000 !important;
-  }
 }
