@@ -5,7 +5,7 @@
   scroll-behavior: smooth;
 }
 :root {
-  color-scheme: light ;
+  color-scheme: light only ;
 }
 .logo{
     display: flex;
@@ -1090,5 +1090,32 @@ input, select, textarea {
   .menu-toggle:checked ~ .mobile-nav {
     transform: translateX(0);
     visibility: visible; /* Added */
+  }
+}
+
+/* ===== Samsung Internet Fixes ===== */
+:root {
+  color-scheme: light only !important;
+}
+
+@media (max-width: 800px) {
+  .mobile-nav {
+    display: none !important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    max-width: 80%;
+    height: 100vh;
+    padding: 110px 24px 24px;
+    background: #44561f;
+    font-family: 'Poppins', sans-serif;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .menu-toggle:checked ~ .mobile-nav {
+    display: flex !important;
+    flex-direction: column;
   }
 }
