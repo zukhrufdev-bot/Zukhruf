@@ -5,7 +5,7 @@
   scroll-behavior: smooth;
 }
 :root {
-  color-scheme: light;
+  color-scheme: only light;
 }
 .logo{
     display: flex;
@@ -54,7 +54,7 @@ background-color: transparent;
 .hero-text h1 {
   font-size: 3.5rem;
   line-height: 1.15;
-  color: #000;
+  color:#f0e8d8;
 }
 .hero-text p {
   font-size: 1.25rem;
