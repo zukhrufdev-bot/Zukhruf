@@ -10,8 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="logo.jpg">
-   <meta name="color-scheme" content="only light">
-<meta name="supported-color-schemes" content="light">
+<meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -174,6 +173,7 @@
 
   <p class="footer-copy">© 2026 Zukhruf. All rights reserved.</p>
 </footer>
+<a href="#" class="to-top" id="toTop" aria-label="Back to top">↑</a>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
@@ -200,6 +200,15 @@ form.addEventListener('submit', function(e) {
     });
 });
 </script>
-
+<script>
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function () {
+    toTop.classList.toggle('show', window.scrollY > 300);
+  });
+  toTop.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 </body>
 </html>
