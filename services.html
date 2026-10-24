@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Zukhruf</title>
     <meta name="description" content="Landing pages, business websites, redesigns, contact forms and updates from Zukhruf.">
+    <meta name="color-scheme" content="only light">
+    <meta name="supported-color-schemes" content="light">
+    <meta name="theme-color" content="#44561f">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="logo.jpg">
- <meta name="color-scheme" content="light">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="extras.css">
 </head>
 <body>
 <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
 <nav class="nav-bar">
     <div class="logo">
-        <img class="logo-img" src="./logo.jpg" alt="Logo">
+        <img class="logo-img" src="./logo.jpg" alt="Zukhruf logo">
         <span>Zukhruf</span>
     </div>
 
@@ -41,11 +44,11 @@
 
 <aside class="mobile-nav">
   <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html"aria-current="page">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact Us</a>
-        </aside>
+  <a href="about.html">About</a>
+  <a href="services.html" aria-current="page">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Contact Us</a>
+</aside>
 
 <!-- services -->
 <section class="services services-page">
@@ -96,6 +99,61 @@
   </div>
 </section>
 
+<!-- packages -->
+<section class="plans" id="packages">
+  <h2 class="page-title">Packages</h2>
+  <p class="plans-intro">
+    Every project is priced to fit what you need. Tell me about yours and I will send a clear quote with no hidden costs.
+    Not sure which one fits? <a href="quiz.html">Take the 1-minute quiz.</a>
+  </p>
+
+  <div class="plans-grid">
+    <article class="plan">
+      <h3>Landing Page</h3>
+      <p class="plan-for">For one product, one event or one service.</p>
+      <p class="plan-price"><small>Price</small><strong>Custom quote</strong></p>
+      <ul>
+        <li>One focused page with a clear next step</li>
+        <li>Works well on phones, tablets and desktops</li>
+        <li>Contact form that lands in your inbox</li>
+        <li>Ready in about 1 to 2 weeks</li>
+      </ul>
+      <a class="plan-btn" href="contact.html">Ask about this</a>
+    </article>
+    <article class="plan featured">
+      <span class="plan-badge">Recommended</span>
+      <h3>Business Website</h3>
+      <p class="plan-for">For a business that needs a proper home online.</p>
+      <p class="plan-price"><small>Price</small><strong>Custom quote</strong></p>
+      <ul>
+        <li>Home, About, Services and Contact pages</li>
+        <li>Designed for you, not copied from a template</li>
+        <li>Contact form and links to your social pages</li>
+        <li>Revision rounds included</li>
+        <li>Ready in about 2 to 4 weeks</li>
+      </ul>
+      <a class="plan-btn" href="contact.html">Ask about this</a>
+    </article>
+    <article class="plan">
+      <h3>Redesign</h3>
+      <p class="plan-for">For a site that exists but is not working for you.</p>
+      <p class="plan-price"><small>Price</small><strong>Custom quote</strong></p>
+      <ul>
+        <li>We keep what works and fix what confuses people</li>
+        <li>Faster loading and a cleaner layout</li>
+        <li>Mobile-friendly on every page</li>
+        <li>Timeline agreed after I see your current site</li>
+      </ul>
+      <a class="plan-btn" href="contact.html">Ask about this</a>
+    </article>
+  </div>
+
+  <p class="plans-note">
+    Need something different, or just small fixes and updates?
+    <a href="contact.html">Send me a message</a> and I will quote it separately.
+  </p>
+</section>
+
 <!-- faq-section -->
 <section class="faq" id="faq">
   <h2 class="page-title">Frequently Asked Questions</h2>
@@ -124,7 +182,7 @@
     <summary>Can I request changes while the site is being built?</summary>
     <p>Of course. I share progress with you along the way, and each project includes a set number of revision rounds so the final result matches your vision. We'll agree on this before we begin.</p>
   </details>
-    
+
   <details>
     <summary>How does payment work?</summary>
     <p>I ask for an advance payment to begin the work, and the remaining balance is due once you're happy with the finished site, before it goes live.</p>
@@ -158,8 +216,8 @@
       <i class="fa-regular fa-envelope"></i>
     </a>
     <a href="https://github.com/zukhrufdev-bot" target="_blank" rel="noopener" aria-label="GitHub">
-  <i class="fa-brands fa-github"></i>
-</a>
+      <i class="fa-brands fa-github"></i>
+    </a>
   </div>
 
   <nav class="footer-links">

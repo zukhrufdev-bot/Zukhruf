@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zukhruf.dev</title>
+    <title>Zukhruf | Website Developer for Small Businesses</title>
     <meta name="description" content="Zukhruf builds fast, clear websites for small businesses. Placed by hand. Built to last.">
+    <meta name="color-scheme" content="only light">
+    <meta name="supported-color-schemes" content="light">
+    <meta name="theme-color" content="#44561f">
+    <link rel="canonical" href="https://zukhruf-three.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zukhruf | Handmade websites for small businesses">
+    <meta property="og:description" content="Fast, clear websites. Placed by hand. Built to last.">
+    <meta property="og:image" content="https://zukhruf-three.vercel.app/logo.jpg">
+    <meta name="twitter:card" content="summary">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="logo.jpg">
-<meta name="color-scheme" content="light">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="extras.css">
 </head>
 <body>
 <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
 <nav class="nav-bar">
     <div class="logo">
-        <img class="logo-img" src="./logo.jpg" alt="Logo">
+        <img class="logo-img" src="./logo.jpg" alt="Zukhruf logo">
         <span>Zukhruf</span>
     </div>
 
@@ -40,7 +49,7 @@
 <label for="menu-toggle" class="overlay"></label>
 
 <aside class="mobile-nav">
-  <a href="index.html">Home</a>
+  <a href="index.html" aria-current="page">Home</a>
   <a href="about.html">About</a>
   <a href="services.html">Services</a>
   <a href="portfolio.html">Portfolio</a>
@@ -55,8 +64,8 @@
         <p>I design and build fast,<br> clear websites for people and <br>businesses who want to be taken seriously online.</p>
 
         <div class="buttons">
-            <a href="#contact"><button>Start Project</button></a>
-            <a href="#portfolio"><button id="touch-btn">View Portfolio</button></a>
+            <a class="btn" href="#contact">Start Project</a>
+            <a class="btn btn-light" href="portfolio.html">View Portfolio</a>
         </div>
     </div>
     <div class="hero-img">
@@ -68,7 +77,7 @@
 
 <!-- about-section -->
 <section class="about" id="about">
-  <img src="picture12.jpg" alt="Zukhruf, web developer">
+  <img src="picture12.jpg" alt="Zukhruf, web developer" loading="lazy">
   <div class="about-text">
     <div>
       <p>Zukhruf (زخرف) means ornament: the fine detail that turns something plain into something worth looking at.</p>
@@ -103,21 +112,29 @@
   </div>
 </section>
 
-<!-- portfolio-section -->
+<!-- portfolio teaser -->
 <section class="portfolio" id="portfolio">
   <div>
     <h2>Every business deserves a place of its own online</h2>
     <p>From a small shop that only had a phone number, to a page with its own name, its own story and a button that says "message us". That is what I want to make possible.</p>
-    <p>Many small businesses have the vision but not the right path online. I build that path one clear website at a time. This is just the beginning.</p>
-    <p>My finished projects will be added here as my work grows.</p>
+    <p>Many small businesses have the vision but not the right path online. I build that path one clear website at a time.</p>
+    <p><a href="portfolio.html">See the work so far</a></p>
   </div>
+</section>
+
+<!-- reviews: hidden until reviews.js has at least one review -->
+<section class="reviews" id="reviews" hidden>
+  <h2 class="page-title">What clients say</h2>
+  <div class="review-grid" id="reviewList"></div>
 </section>
 
 <!-- contact us section -->
 <section class="contact" id="contact">
   <h1>Need a website? Send a short message about what you need. I will reply with questions and a price.</h1>
+  <p class="contact-hint">Not sure what you need? <a href="quiz.html">Take the 1-minute quiz.</a></p>
 
   <form id="contactForm">
+    <input class="hp" type="text" name="company_site" tabindex="-1" autocomplete="off" aria-hidden="true">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" placeholder="Fatima Ahmed" required>
 
@@ -137,7 +154,7 @@
     <textarea id="message" name="message"></textarea>
 
     <button type="submit">Send message</button>
-    <p id="status"></p>
+    <p id="status" role="status"></p>
   </form>
 
 </section>
@@ -159,7 +176,7 @@
       <i class="fa-regular fa-envelope"></i>
     </a>
     <a href="https://github.com/zukhrufdev-bot" target="_blank" rel="noopener" aria-label="GitHub">
-  <i class="fa-brands fa-github"></i>
+      <i class="fa-brands fa-github"></i>
     </a>
   </div>
 
@@ -174,17 +191,19 @@
   <p class="footer-copy">© 2026 Zukhruf. All rights reserved.</p>
 </footer>
 <a href="#" class="to-top" id="toTop" aria-label="Back to top">↑</a>
-
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
 <script>
 emailjs.init("A1_KscUzBqpIeKpGn");
 
 const form = document.getElementById('contactForm');
 const status = document.getElementById('status');
+const sendBtn = form.querySelector('button[type="submit"]');
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
   e.preventDefault();
+  if (form.company_site && form.company_site.value) return; // spam bot
+  sendBtn.disabled = true;
+  status.style.color = "";
   status.textContent = "Sending...";
 
   emailjs.sendForm('service_p03mz6a', 'template_qtfs8ja', this)
@@ -197,6 +216,9 @@ form.addEventListener('submit', function(e) {
       status.textContent = "Failed to send. Please try again.";
       status.style.color = "red";
       console.error(err);
+    })
+    .finally(() => {
+      sendBtn.disabled = false;
     });
 });
 </script>
@@ -210,5 +232,6 @@ form.addEventListener('submit', function(e) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
+<script src="reviews.js"></script>
 </body>
 </html>

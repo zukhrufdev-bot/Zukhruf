@@ -5,30 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Zukhruf</title>
     <meta name="description" content="Contact Zukhruf to ask about a landing page, business website or redesign.">
+    <meta name="color-scheme" content="only light">
+    <meta name="supported-color-schemes" content="light">
+    <meta name="theme-color" content="#44561f">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="logo.jpg">
-  <meta name="color-scheme" content="light">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="extras.css">
 </head>
 <body>
 <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
 <nav class="nav-bar">
     <div class="logo">
-        <img class="logo-img" src="./logo.jpg" alt="Logo">
+        <img class="logo-img" src="./logo.jpg" alt="Zukhruf logo">
         <span>Zukhruf</span>
     </div>
 
-    <aside class="nav-links">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="contact.html" aria-current="page">Contact Us</a>
-</aside>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html" aria-current="page">Contact Us</a>
+    </div>
 
     <label for="menu-toggle" class="hamburger" aria-label="Open menu">
         <span></span>
@@ -44,14 +47,16 @@
   <a href="about.html">About</a>
   <a href="services.html">Services</a>
   <a href="portfolio.html">Portfolio</a>
-  <a href="contact.html"aria-current="page">Contact Us</a>
+  <a href="contact.html" aria-current="page">Contact Us</a>
 </aside>
 
 <!-- contact -->
 <section class="contact">
   <h1>Need a website? Send a short message about what you need. I will reply with questions and a price.</h1>
+  <p class="contact-hint">Not sure what you need? <a href="quiz.html">Take the 1-minute quiz.</a></p>
 
   <form id="contactForm">
+    <input class="hp" type="text" name="company_site" tabindex="-1" autocomplete="off" aria-hidden="true">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" placeholder="Fatima Ahmed" required>
 
@@ -71,7 +76,7 @@
     <textarea id="message" name="message"></textarea>
 
     <button type="submit">Send message</button>
-    <p id="status"></p>
+    <p id="status" role="status"></p>
   </form>
 
 </section>
@@ -93,8 +98,8 @@
       <i class="fa-regular fa-envelope"></i>
     </a>
     <a href="https://github.com/zukhrufdev-bot" target="_blank" rel="noopener" aria-label="GitHub">
-  <i class="fa-brands fa-github"></i>
-</a>
+      <i class="fa-brands fa-github"></i>
+    </a>
   </div>
 
   <nav class="footer-links">
@@ -107,19 +112,29 @@
 
   <p class="footer-copy">© 2026 Zukhruf. All rights reserved.</p>
 </footer>
-
 <a href="#" class="to-top" id="toTop" aria-label="Back to top">↑</a>
-
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
 <script>
 emailjs.init("A1_KscUzBqpIeKpGn");
 
 const form = document.getElementById('contactForm');
 const status = document.getElementById('status');
+const sendBtn = form.querySelector('button[type="submit"]');
 
-form.addEventListener('submit', function(e) {
+// Pre-select the package when someone arrives from the quiz (contact.html?need=Landing%20Page)
+const wanted = new URLSearchParams(location.search).get('need');
+const needSelect = document.getElementById('need');
+if (wanted && needSelect) {
+  for (const option of needSelect.options) {
+    if (option.text === wanted) needSelect.value = option.value;
+  }
+}
+
+form.addEventListener('submit', function (e) {
   e.preventDefault();
+  if (form.company_site && form.company_site.value) return; // spam bot
+  sendBtn.disabled = true;
+  status.style.color = "";
   status.textContent = "Sending...";
 
   emailjs.sendForm('service_p03mz6a', 'template_qtfs8ja', this)
@@ -132,6 +147,9 @@ form.addEventListener('submit', function(e) {
       status.textContent = "Failed to send. Please try again.";
       status.style.color = "red";
       console.error(err);
+    })
+    .finally(() => {
+      sendBtn.disabled = false;
     });
 });
 </script>

@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Zukhruf</title>
-    <meta name="description" content="The portfolio of Zukhruf, a web developer building clear, handmade websites for small businesses.">
+    <meta name="description" content="Websites built by Zukhruf: clear, handmade pages for small businesses.">
+    <meta name="color-scheme" content="only light">
+    <meta name="supported-color-schemes" content="light">
+    <meta name="theme-color" content="#44561f">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="logo.jpg">
-  <meta name="color-scheme" content="light">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="extras.css">
 </head>
 <body>
 <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
 <nav class="nav-bar">
     <div class="logo">
-        <img class="logo-img" src="./logo.jpg" alt="Logo">
+        <img class="logo-img" src="./logo.jpg" alt="Zukhruf logo">
         <span>Zukhruf</span>
     </div>
 
@@ -48,24 +51,70 @@
 </aside>
 
 <!-- portfolio -->
-
-<!-- portfolio -->
-<section class="portfolio portfolio-page">
+<section class="work">
   <h1 class="page-title">Portfolio</h1>
+  <p class="work-intro">
+    A few of the sites I have built so far. Each one starts with a plain question: what does this person need their website to do?
+  </p>
 
-  <div>
-    <h2>Every business deserves a place of its own online</h2>
-    <p>From a small shop that only had a phone number, to a page with its own name, its own story and a button that says "message us". That is what I want to make possible.</p>
-    <p>Many small businesses have the vision but not the right path online. I build that path one clear website at a time. This is just the beginning.</p>
-    <p>My finished projects will be added here as my work grows.</p>
+  <div class="work-grid">
+
+    <!-- Project 1: this site -->
+    <article class="project">
+      <div class="shot">
+             <img src="shot-zukhruf.jpg" alt="Home page of the Zukhruf website" width="800" height="500" loading="lazy">
+        
+      </div>
+
+      <div class="project-tags">
+        <span class="tag">My own site</span>
+        <span class="tag tag-live">Live</span>
+      </div>
+      <h3>Zukhruf.dev</h3>
+      <p><strong>The need.</strong> A clear home online where small businesses can see my work and send me a message in one step.</p>
+      <p><strong>What I built.</strong> Five pages that work on phones first, a simple menu, an FAQ, and a contact form that lands straight in my inbox.</p>
+      <p class="project-tools">Built with HTML, CSS and JavaScript, with EmailJS for the contact form.</p>
+      <a class="work-btn" href="index.html">Visit the site</a>
+    </article>
+
+    <!-- Project 2: concept -->
+    <article class="project">
+      <div class="shot">
+        <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="shot-body mock mock-warm" aria-hidden="true">
+          <span class="m-title"></span>
+          <span class="m-line"></span>
+          <span class="m-line short"></span>
+          <span class="m-btn"></span>
+          <span class="m-img"></span>
+        </div>
+      </div>
+
+      <div class="project-tags">
+        <span class="tag">Concept project</span>
+      </div>
+      <h3>Handmade crochet shop</h3>
+      <p><strong>The need.</strong> A small shop that sells through Instagram messages needs a page with its own name, its own story and a button that says "message us".</p>
+      <p><strong>What I would build.</strong> A single landing page with the shop's story, a few featured pieces and one clear way to order.</p>
+      <p class="project-tools">Built with HTML and CSS.</p>
+      <!-- When this concept is live, add: <a class="work-btn" href="YOUR-LINK">Visit the site</a> -->
+    </article>
+
+    <!-- Open slot -->
+    <article class="project project-open">
+      <h3>Your business could be next</h3>
+      <p>I am taking on my first client projects now. Tell me about your business and I will give it the same care I give every site.</p>
+      <p>Each finished project gets a screenshot, a short note on what you needed, and what I built for you.</p>
+      <a class="work-btn work-btn-pink" href="contact.html">Start a project</a>
+    </article>
+
   </div>
 
-  <div class="card-two">
-  <h2>What will appear here</h2>
-  <p>Each project will have a screenshot, a short note on what the client needed, and what I built for them.</p>
-  <p>Want to be one of the first? Tell me about your business and I will give it the same care I give every site.</p>
-  <p><a class="cta-link" href="contact.html">Start a project</a></p>
-</div>
+  <ul class="promise">
+    <li>Made for you, not copied from a template.</li>
+    <li>Checked on phones before anything else.</li>
+    <li>You talk to the person who builds it.</li>
+  </ul>
 </section>
 
 <!-- footer -->
@@ -81,13 +130,12 @@
     <a href="https://instagram.com/zukhruf.dev" target="_blank" rel="noopener" aria-label="Instagram">
       <i class="fa-brands fa-instagram"></i>
     </a>
-    
     <a href="mailto:zukhrufdev@gmail.com" aria-label="Email">
       <i class="fa-regular fa-envelope"></i>
     </a>
     <a href="https://github.com/zukhrufdev-bot" target="_blank" rel="noopener" aria-label="GitHub">
-  <i class="fa-brands fa-github"></i>
-</a>
+      <i class="fa-brands fa-github"></i>
+    </a>
   </div>
 
   <nav class="footer-links">

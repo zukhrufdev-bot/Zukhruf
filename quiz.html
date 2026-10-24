@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which website do you need? | Zukhruf</title>
+    <meta name="description" content="Answer three short questions and find out whether a landing page, a business website or a redesign fits you best.">
+    <meta name="color-scheme" content="only light">
+    <meta name="supported-color-schemes" content="light">
+    <meta name="theme-color" content="#44561f">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="logo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="extras.css">
+</head>
+<body>
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+<nav class="nav-bar">
+    <div class="logo">
+        <img class="logo-img" src="./logo.jpg" alt="Zukhruf logo">
+        <span>Zukhruf</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <label for="menu-toggle" class="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+</nav>
+
+<label for="menu-toggle" class="overlay"></label>
+
+<aside class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Contact Us</a>
+</aside>
+
+<!-- quiz -->
+<section class="quiz">
+  <h1 class="page-title">Which website do you need?</h1>
+  <p class="quiz-intro">Three quick questions. No sign-up, and nothing is sent anywhere.</p>
+
+  <form id="quizForm" class="quiz-card">
+    <p id="quizStep" class="quiz-step">Question 1 of 3</p>
+    <div class="quiz-bar" aria-hidden="true"><span id="quizBar"></span></div>
+
+    <fieldset class="q">
+      <legend>What should your website do first?</legend>
+      <label class="opt"><input type="radio" name="q1" data-landing="2" data-business="0" data-redesign="0"><span>Promote one thing, like a product, an event or a single service</span></label>
+      <label class="opt"><input type="radio" name="q1" data-landing="0" data-business="2" data-redesign="0"><span>Introduce my whole business and how to reach me</span></label>
+      <label class="opt"><input type="radio" name="q1" data-landing="0" data-business="0" data-redesign="3"><span>Fix the website I already have</span></label>
+    </fieldset>
+    <fieldset class="q" hidden>
+      <legend>How many pages are you imagining?</legend>
+      <label class="opt"><input type="radio" name="q2" data-landing="2" data-business="0" data-redesign="0"><span>Just one</span></label>
+      <label class="opt"><input type="radio" name="q2" data-landing="0" data-business="2" data-redesign="0"><span>A few: home, about, services and contact</span></label>
+      <label class="opt"><input type="radio" name="q2" data-landing="0" data-business="1" data-redesign="0"><span>I am not sure yet</span></label>
+    </fieldset>
+    <fieldset class="q" hidden>
+      <legend>What is the biggest problem right now?</legend>
+      <label class="opt"><input type="radio" name="q3" data-landing="1" data-business="1" data-redesign="0"><span>People do not know what I offer</span></label>
+      <label class="opt"><input type="radio" name="q3" data-landing="0" data-business="0" data-redesign="2"><span>My current website is slow, old or confusing</span></label>
+      <label class="opt"><input type="radio" name="q3" data-landing="2" data-business="0" data-redesign="0"><span>I need a quick page for something new</span></label>
+    </fieldset>
+
+    <div class="quiz-actions">
+      <button type="button" id="quizBack" class="quiz-btn quiz-btn-ghost" hidden>Back</button>
+      <button type="button" id="quizNext" class="quiz-btn" disabled>Next</button>
+    </div>
+  </form>
+
+  <div id="quizResult" class="quiz-card quiz-result" hidden>
+    <h2 id="resultTitle"></h2>
+    <p id="resultWhy"></p>
+    <ul id="resultPoints"></ul>
+    <div class="quiz-actions">
+      <button type="button" id="quizAgain" class="quiz-btn quiz-btn-ghost">Start again</button>
+      <a id="resultLink" class="quiz-btn quiz-link" href="contact.html">Ask about this</a>
+    </div>
+  </div>
+
+  <noscript><p class="quiz-intro">The quiz needs JavaScript. You can also <a href="contact.html">send me a message</a> and I will help you choose.</p></noscript>
+</section>
+
+<!-- footer -->
+<footer class="site-footer">
+  <div class="footer-brand">
+    <img src="./logo.jpg" alt="Zukhruf logo">
+    <span>Zukhruf</span>
+  </div>
+
+  <p class="footer-tagline">Small details. Clear websites.</p>
+
+  <div class="footer-social">
+    <a href="https://instagram.com/zukhruf.dev" target="_blank" rel="noopener" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="mailto:zukhrufdev@gmail.com" aria-label="Email">
+      <i class="fa-regular fa-envelope"></i>
+    </a>
+    <a href="https://github.com/zukhrufdev-bot" target="_blank" rel="noopener" aria-label="GitHub">
+      <i class="fa-brands fa-github"></i>
+    </a>
+  </div>
+
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <p class="footer-copy">© 2026 Zukhruf. All rights reserved.</p>
+</footer>
+<a href="#" class="to-top" id="toTop" aria-label="Back to top">↑</a>
+<script>
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function () {
+    toTop.classList.toggle('show', window.scrollY > 300);
+  });
+  toTop.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+<script src="quiz.js"></script>
+</body>
+</html>
